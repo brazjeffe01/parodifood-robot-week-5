@@ -15,3 +15,9 @@ Buscar um restaurante
 
   Click         css=.search-link
   Fill Text     css=input[formcontrolname="searchControl"]      Debuger
+
+  Wait For Elements State     css=.place-info-box     visible     10
+  Get Text      css=.place-info-box     contains    DEBUGER KING
+
+  Sleep         1
+  Take Screenshot
