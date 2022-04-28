@@ -6,6 +6,7 @@ Library     Browser     strict=false
 Library     OperatingSystem
 
 Resource      actions/search.robot
+Resource      actions/cart.robot
 
 * Keywords *
 
@@ -22,6 +23,6 @@ get JSON
   [Arguments]     ${file_name}
 
   ${file}             Get File        ${EXECDIR}/resources/fixtures/${file_name}
-  ${super_var}       Evaluate        json.loads($file)       json
+  ${super_var}        Evaluate        json.loads($file)       json
 
   [return]            ${super_var}

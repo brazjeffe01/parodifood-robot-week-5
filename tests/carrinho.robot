@@ -8,7 +8,7 @@ Test Teardown     Take Screenshot
 * Test Cases *
 Deve adicionar um item ao carrinho
 
-  &{restaurant}     Create Dictionary     name=STARBUGS COFFEE      desc=Nada melhor que um café pra te ajudar a resolver um bug.
+  &{restaurant}     Create Dictionary     restaurant=STARBUGS COFFEE      desc=Nada melhor que um café pra te ajudar a resolver um bug.
 
   Go To restaurants
   Choose Restaurant     ${restaurant}
@@ -19,47 +19,18 @@ Deve adicionar um item ao carrinho
   Total Cart Should Be  15,60
 
 Deve adicionar 3 itens ao carrinho
-  [Tags]      temp
+  [tags]      temp
 
-  &{restaurant}     Create Dictionary     name=STARBUGS COFFEE      desc=Nada melhor que um café pra te ajudar a resolver um bug.
+  ${cart_json}        get JSON          cart.json
 
   Go To restaurants
-  Choose Restaurant     ${restaurant}
+  Choose Restaurant     ${cart_json}
 
-  # Add To Cart             Cappuccino com Chantilly
-  # Should Add To Cart      Cappuccino com Chantilly
+  FOR     ${product}      IN        @{cart_json["products"]}
+    Add To Cart           ${product["name"]}
+    Should Add To Cart    ${product["name"]}
+  END
 
-  # Add To Cart             Super Espreso
-  # Should Add To Cart      Super Espreso
-
-  # Add To Cart             Starbugs 500 error
-  # Should Add To Cart      Starbugs 500 error
-
-  Total Cart Should Be    38,00
+  Total Cart Should Be    ${cart_json["total"]}
 
   Sleep       10
-
-  
-* Keywords *
-Choose Restaurant
-  [Arguments]     ${restaurant}
-
-  Click     text=${restaurant["name"]}      force=true
-
-  Wait For Elements State       css=#detail       visible     10
-  Get Text      css=#detail     contains      ${restaurant["desc"]}
-
-Add To Cart
-  [Arguments]     ${name}
-
-  Click     xpath=//span[text()="${name}"]/..//a[@class="add-to-cart"]
-
-Should Add To Cart
-  [Arguments]     ${name}
-
-  Wait For Elements State     css=#cart tr >> text=${name}     visible     5
-
-Total Cart Should Be
-  [Arguments]     ${total}
-
-  Get Text        xpath=//th[contains(text(),"Total")]/..//td       contains      ${total}

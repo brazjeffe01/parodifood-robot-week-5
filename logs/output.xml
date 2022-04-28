@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 5.0 (Python 3.10.4 on win32)" generated="20220427 11:58:26.347" rpa="false" schemaversion="3">
-<suite id="s1" name="Carrinho" source="C:\rw5\parodifood\tests\carrinho.robot">
-<test id="s1-t1" name="Deve adicionar 3 itens ao carrinho" line="21">
+<robot generator="Robot 5.0 (Python 3.10.4 on win32)" generated="20220428 11:45:57.293" rpa="false" schemaversion="3">
+<suite id="s1" name="Tests" source="C:\rw5\parodifood\tests">
+<suite id="s1-s1" name="Busca" source="C:\rw5\parodifood\tests\busca.robot">
+<test id="s1-s1-t1" name="Deve buscar um único restaurante" line="8">
 <kw name="Start Session" library="base" type="SETUP">
 <kw name="New Browser" library="Browser">
 <arg>chromium</arg>
@@ -9,18 +10,18 @@
 <tag>BrowserControl</tag>
 <tag>Setter</tag>
 <doc>Create a new playwright Browser with specified options.</doc>
-<msg timestamp="20220427 11:58:27.775" level="INFO">{"browser": "chromium", "headless": false, "handleSIGINT": true, "handleSIGTERM": true, "handleSIGHUP": true, "timeout": 30000.0, "devtools": false, "slowMo": 0.0, "tracesDir": "C:\\rw5\\parodifood\\logs\\browser\\traces\\ef198ed0-b1ac-4d31-a912-d60a047955d2"}</msg>
-<msg timestamp="20220427 11:58:29.306" level="INFO">Successfully created browser with options: {"browser":"chromium","headless":false,"handleSIGINT":true,"handleSIGTERM":true,"handleSIGHUP":true,"timeout":30000,"devtools":false,"slowMo":0,"tracesDir":"C:\\rw5\\parodifood\\logs\\browser\\traces\\ef198ed0-b1ac-4d31-a912-d60a047955d2"}</msg>
-<status status="PASS" starttime="20220427 11:58:27.774" endtime="20220427 11:58:29.306"/>
+<msg timestamp="20220428 11:45:58.766" level="INFO">{"browser": "chromium", "headless": false, "handleSIGINT": true, "handleSIGTERM": true, "handleSIGHUP": true, "timeout": 30000.0, "devtools": false, "slowMo": 0.0, "tracesDir": "C:\\rw5\\parodifood\\logs\\browser\\traces\\d4bed53e-817b-4165-b8d1-f8eb20f15542"}</msg>
+<msg timestamp="20220428 11:46:00.227" level="INFO">Successfully created browser with options: {"browser":"chromium","headless":false,"handleSIGINT":true,"handleSIGTERM":true,"handleSIGHUP":true,"timeout":30000,"devtools":false,"slowMo":0,"tracesDir":"C:\\rw5\\parodifood\\logs\\browser\\traces\\d4bed53e-817b-4165-b8d1-f8eb20f15542"}</msg>
+<status status="PASS" starttime="20220428 11:45:58.766" endtime="20220428 11:46:00.227"/>
 </kw>
 <kw name="New Page" library="Browser">
 <arg>http://parodifood.qaninja.academy/</arg>
 <tag>BrowserControl</tag>
 <tag>Setter</tag>
 <doc>Open a new Page.</doc>
-<msg timestamp="20220427 11:58:35.012" level="INFO">Successfully initialized new page object and opened url: http://parodifood.qaninja.academy/</msg>
-<msg timestamp="20220427 11:58:35.013" level="INFO">No context was open. New context was automatically opened when this page is created.</msg>
-<status status="PASS" starttime="20220427 11:58:29.306" endtime="20220427 11:58:35.013"/>
+<msg timestamp="20220428 11:46:06.481" level="INFO">Successfully initialized new page object and opened url: http://parodifood.qaninja.academy/</msg>
+<msg timestamp="20220428 11:46:06.481" level="INFO">No context was open. New context was automatically opened when this page is created.</msg>
+<status status="PASS" starttime="20220428 11:46:00.228" endtime="20220428 11:46:06.481"/>
 </kw>
 <kw name="Get Text" library="Browser">
 <arg>css=span</arg>
@@ -30,17 +31,9 @@
 <tag>Getter</tag>
 <tag>PageContent</tag>
 <doc>Returns text attribute of the element found by ``selector``.</doc>
-<status status="PASS" starttime="20220427 11:58:35.014" endtime="20220427 11:58:35.238"/>
+<status status="PASS" starttime="20220428 11:46:06.482" endtime="20220428 11:46:06.691"/>
 </kw>
-<status status="PASS" starttime="20220427 11:58:27.774" endtime="20220427 11:58:35.238"/>
-</kw>
-<kw name="Create Dictionary" library="BuiltIn">
-<var>&amp;{restaurant}</var>
-<arg>name=STARBUGS COFFEE</arg>
-<arg>desc=Nada melhor que um café pra te ajudar a resolver um bug.</arg>
-<doc>Creates and returns a dictionary based on the given ``items``.</doc>
-<msg timestamp="20220427 11:58:35.239" level="INFO">&amp;{restaurant} = { name=STARBUGS COFFEE | desc=Nada melhor que um café pra te ajudar a resolver um bug. }</msg>
-<status status="PASS" starttime="20220427 11:58:35.239" endtime="20220427 11:58:35.240"/>
+<status status="PASS" starttime="20220428 11:45:58.765" endtime="20220428 11:46:06.691"/>
 </kw>
 <kw name="Go To restaurants" library="search">
 <kw name="Click" library="Browser">
@@ -48,7 +41,7 @@
 <tag>PageContent</tag>
 <tag>Setter</tag>
 <doc>Simulates mouse click on the element found by ``selector``.</doc>
-<status status="PASS" starttime="20220427 11:58:35.241" endtime="20220427 11:58:35.379"/>
+<status status="PASS" starttime="20220428 11:46:06.692" endtime="20220428 11:46:06.826"/>
 </kw>
 <kw name="Get Text" library="Browser">
 <arg>css=h1 strong</arg>
@@ -58,19 +51,369 @@
 <tag>Getter</tag>
 <tag>PageContent</tag>
 <doc>Returns text attribute of the element found by ``selector``.</doc>
-<status status="PASS" starttime="20220427 11:58:35.379" endtime="20220427 11:58:35.403"/>
+<status status="PASS" starttime="20220428 11:46:06.826" endtime="20220428 11:46:06.849"/>
 </kw>
-<status status="PASS" starttime="20220427 11:58:35.240" endtime="20220427 11:58:35.403"/>
+<status status="PASS" starttime="20220428 11:46:06.692" endtime="20220428 11:46:06.849"/>
 </kw>
-<kw name="Choose Restaurant">
+<kw name="Search By" library="search">
+<arg>Debuger</arg>
+<kw name="Click" library="Browser">
+<arg>css=.search-link</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" starttime="20220428 11:46:06.850" endtime="20220428 11:46:06.898"/>
+</kw>
+<kw name="Fill Text" library="Browser">
+<arg>css=input[formcontrolname="searchControl"]</arg>
+<arg>${value}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<msg timestamp="20220428 11:46:06.898" level="INFO">Fills the text 'Debuger' in the given field.</msg>
+<status status="PASS" starttime="20220428 11:46:06.898" endtime="20220428 11:46:06.938"/>
+</kw>
+<status status="PASS" starttime="20220428 11:46:06.849" endtime="20220428 11:46:06.939"/>
+</kw>
+<kw name="Restaurant Should Be Visible" library="search">
+<arg>DEBUGER KING</arg>
+<kw name="Wait For Elements State" library="Browser">
+<arg>${DIV_BOX_RESTAURANT}</arg>
+<arg>visible</arg>
+<arg>10</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<msg timestamp="20220428 11:46:08.073" level="INFO">Waited for Element with selector css=div[class="place-info-box"][style="opacity: 1;"] at state visible</msg>
+<status status="PASS" starttime="20220428 11:46:06.940" endtime="20220428 11:46:08.073"/>
+</kw>
+<kw name="Get Text" library="Browser">
+<arg>${DIV_BOX_RESTAURANT}</arg>
+<arg>contains</arg>
+<arg>${name}</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns text attribute of the element found by ``selector``.</doc>
+<status status="PASS" starttime="20220428 11:46:08.073" endtime="20220428 11:46:08.098"/>
+</kw>
+<status status="PASS" starttime="20220428 11:46:06.939" endtime="20220428 11:46:08.098"/>
+</kw>
+<kw name="Restaurant Count Should Be" library="search">
+<arg>1</arg>
+<kw name="Wait For Elements State" library="Browser">
+<arg>${DIV_BOX_RESTAURANT}</arg>
+<arg>visible</arg>
+<arg>10</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<msg timestamp="20220428 11:46:08.109" level="INFO">Waited for Element with selector css=div[class="place-info-box"][style="opacity: 1;"] at state visible</msg>
+<status status="PASS" starttime="20220428 11:46:08.099" endtime="20220428 11:46:08.109"/>
+</kw>
+<kw name="Get Element Count" library="Browser">
+<arg>${DIV_BOX_RESTAURANT}</arg>
+<arg>equal</arg>
+<arg>${qtd}</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns the count of elements found with ``selector``.</doc>
+<status status="PASS" starttime="20220428 11:46:08.109" endtime="20220428 11:46:08.118"/>
+</kw>
+<status status="PASS" starttime="20220428 11:46:08.099" endtime="20220428 11:46:08.118"/>
+</kw>
+<kw name="Take Screenshot" library="Browser" type="TEARDOWN">
+<tag>PageContent</tag>
+<doc>Takes a screenshot of the current window or element and saves it to disk.</doc>
+<msg timestamp="20220428 11:46:08.273" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="browser/screenshot/robotframework-browser-screenshot-1.png"&gt;&lt;img src="browser/screenshot/robotframework-browser-screenshot-1.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20220428 11:46:08.119" endtime="20220428 11:46:08.274"/>
+</kw>
+<status status="PASS" starttime="20220428 11:45:58.761" endtime="20220428 11:46:08.274"/>
+</test>
+<test id="s1-s1-t2" name="Deve buscar por categoria" line="19">
+<kw name="Start Session" library="base" type="SETUP">
+<kw name="New Browser" library="Browser">
+<arg>chromium</arg>
+<arg>False</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Create a new playwright Browser with specified options.</doc>
+<msg timestamp="20220428 11:46:08.361" level="INFO">{"browser": "chromium", "headless": false, "handleSIGINT": true, "handleSIGTERM": true, "handleSIGHUP": true, "timeout": 30000.0, "devtools": false, "slowMo": 0.0, "tracesDir": "C:\\rw5\\parodifood\\logs\\browser\\traces\\0cbb3358-9284-43bd-838b-15c9f526b53e"}</msg>
+<msg timestamp="20220428 11:46:09.762" level="INFO">Successfully created browser with options: {"browser":"chromium","headless":false,"handleSIGINT":true,"handleSIGTERM":true,"handleSIGHUP":true,"timeout":30000,"devtools":false,"slowMo":0,"tracesDir":"C:\\rw5\\parodifood\\logs\\browser\\traces\\0cbb3358-9284-43bd-838b-15c9f526b53e"}</msg>
+<status status="PASS" starttime="20220428 11:46:08.360" endtime="20220428 11:46:09.762"/>
+</kw>
+<kw name="New Page" library="Browser">
+<arg>http://parodifood.qaninja.academy/</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Open a new Page.</doc>
+<msg timestamp="20220428 11:46:16.244" level="INFO">Successfully initialized new page object and opened url: http://parodifood.qaninja.academy/</msg>
+<msg timestamp="20220428 11:46:16.245" level="INFO">No context was open. New context was automatically opened when this page is created.</msg>
+<status status="PASS" starttime="20220428 11:46:09.762" endtime="20220428 11:46:16.245"/>
+</kw>
+<kw name="Get Text" library="Browser">
+<arg>css=span</arg>
+<arg>contains</arg>
+<arg>Nunca foi tão engraçado pedir comida</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns text attribute of the element found by ``selector``.</doc>
+<status status="PASS" starttime="20220428 11:46:16.246" endtime="20220428 11:46:16.450"/>
+</kw>
+<status status="PASS" starttime="20220428 11:46:08.360" endtime="20220428 11:46:16.450"/>
+</kw>
+<kw name="Go To restaurants" library="search">
+<kw name="Click" library="Browser">
+<arg>text=Estou com fome!</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" starttime="20220428 11:46:16.451" endtime="20220428 11:46:16.559"/>
+</kw>
+<kw name="Get Text" library="Browser">
+<arg>css=h1 strong</arg>
+<arg>contains</arg>
+<arg>Ta na hora de matar a fome!</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns text attribute of the element found by ``selector``.</doc>
+<status status="PASS" starttime="20220428 11:46:16.560" endtime="20220428 11:46:16.579"/>
+</kw>
+<status status="PASS" starttime="20220428 11:46:16.451" endtime="20220428 11:46:16.580"/>
+</kw>
+<kw name="Search By" library="search">
+<arg>Cafe</arg>
+<kw name="Click" library="Browser">
+<arg>css=.search-link</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" starttime="20220428 11:46:16.580" endtime="20220428 11:46:16.639"/>
+</kw>
+<kw name="Fill Text" library="Browser">
+<arg>css=input[formcontrolname="searchControl"]</arg>
+<arg>${value}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<msg timestamp="20220428 11:46:16.640" level="INFO">Fills the text 'Cafe' in the given field.</msg>
+<status status="PASS" starttime="20220428 11:46:16.639" endtime="20220428 11:46:16.672"/>
+</kw>
+<status status="PASS" starttime="20220428 11:46:16.580" endtime="20220428 11:46:16.672"/>
+</kw>
+<kw name="Restaurant Should Be Visible" library="search">
+<arg>STARBUGS COFFEE</arg>
+<kw name="Wait For Elements State" library="Browser">
+<arg>${DIV_BOX_RESTAURANT}</arg>
+<arg>visible</arg>
+<arg>10</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<msg timestamp="20220428 11:46:17.749" level="INFO">Waited for Element with selector css=div[class="place-info-box"][style="opacity: 1;"] at state visible</msg>
+<status status="PASS" starttime="20220428 11:46:16.677" endtime="20220428 11:46:17.749"/>
+</kw>
+<kw name="Get Text" library="Browser">
+<arg>${DIV_BOX_RESTAURANT}</arg>
+<arg>contains</arg>
+<arg>${name}</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns text attribute of the element found by ``selector``.</doc>
+<status status="PASS" starttime="20220428 11:46:17.750" endtime="20220428 11:46:17.771"/>
+</kw>
+<status status="PASS" starttime="20220428 11:46:16.677" endtime="20220428 11:46:17.771"/>
+</kw>
+<kw name="Take Screenshot" library="Browser" type="TEARDOWN">
+<tag>PageContent</tag>
+<doc>Takes a screenshot of the current window or element and saves it to disk.</doc>
+<msg timestamp="20220428 11:46:17.946" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="browser/screenshot/robotframework-browser-screenshot-2.png"&gt;&lt;img src="browser/screenshot/robotframework-browser-screenshot-2.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20220428 11:46:17.772" endtime="20220428 11:46:17.946"/>
+</kw>
+<status status="PASS" starttime="20220428 11:46:08.356" endtime="20220428 11:46:17.947"/>
+</test>
+<test id="s1-s1-t3" name="Deve buscar todos os restaurantes" line="27">
+<kw name="Start Session" library="base" type="SETUP">
+<kw name="New Browser" library="Browser">
+<arg>chromium</arg>
+<arg>False</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Create a new playwright Browser with specified options.</doc>
+<msg timestamp="20220428 11:46:18.043" level="INFO">{"browser": "chromium", "headless": false, "handleSIGINT": true, "handleSIGTERM": true, "handleSIGHUP": true, "timeout": 30000.0, "devtools": false, "slowMo": 0.0, "tracesDir": "C:\\rw5\\parodifood\\logs\\browser\\traces\\9f6869fa-27cd-4cad-8fd8-5b99803228ee"}</msg>
+<msg timestamp="20220428 11:46:19.562" level="INFO">Successfully created browser with options: {"browser":"chromium","headless":false,"handleSIGINT":true,"handleSIGTERM":true,"handleSIGHUP":true,"timeout":30000,"devtools":false,"slowMo":0,"tracesDir":"C:\\rw5\\parodifood\\logs\\browser\\traces\\9f6869fa-27cd-4cad-8fd8-5b99803228ee"}</msg>
+<status status="PASS" starttime="20220428 11:46:18.042" endtime="20220428 11:46:19.562"/>
+</kw>
+<kw name="New Page" library="Browser">
+<arg>http://parodifood.qaninja.academy/</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Open a new Page.</doc>
+<msg timestamp="20220428 11:46:24.099" level="INFO">Successfully initialized new page object and opened url: http://parodifood.qaninja.academy/</msg>
+<msg timestamp="20220428 11:46:24.100" level="INFO">No context was open. New context was automatically opened when this page is created.</msg>
+<status status="PASS" starttime="20220428 11:46:19.562" endtime="20220428 11:46:24.100"/>
+</kw>
+<kw name="Get Text" library="Browser">
+<arg>css=span</arg>
+<arg>contains</arg>
+<arg>Nunca foi tão engraçado pedir comida</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns text attribute of the element found by ``selector``.</doc>
+<status status="PASS" starttime="20220428 11:46:24.101" endtime="20220428 11:46:24.338"/>
+</kw>
+<status status="PASS" starttime="20220428 11:46:18.041" endtime="20220428 11:46:24.338"/>
+</kw>
+<kw name="Go To restaurants" library="search">
+<kw name="Click" library="Browser">
+<arg>text=Estou com fome!</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" starttime="20220428 11:46:24.339" endtime="20220428 11:46:24.441"/>
+</kw>
+<kw name="Get Text" library="Browser">
+<arg>css=h1 strong</arg>
+<arg>contains</arg>
+<arg>Ta na hora de matar a fome!</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns text attribute of the element found by ``selector``.</doc>
+<status status="PASS" starttime="20220428 11:46:24.441" endtime="20220428 11:46:24.466"/>
+</kw>
+<status status="PASS" starttime="20220428 11:46:24.339" endtime="20220428 11:46:24.467"/>
+</kw>
+<kw name="Search By" library="search">
+<arg>a</arg>
+<kw name="Click" library="Browser">
+<arg>css=.search-link</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" starttime="20220428 11:46:24.468" endtime="20220428 11:46:24.514"/>
+</kw>
+<kw name="Fill Text" library="Browser">
+<arg>css=input[formcontrolname="searchControl"]</arg>
+<arg>${value}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<msg timestamp="20220428 11:46:24.514" level="INFO">Fills the text 'a' in the given field.</msg>
+<status status="PASS" starttime="20220428 11:46:24.514" endtime="20220428 11:46:24.548"/>
+</kw>
+<status status="PASS" starttime="20220428 11:46:24.467" endtime="20220428 11:46:24.549"/>
+</kw>
+<kw name="Restaurant Count Should Be" library="search">
+<arg>5</arg>
+<kw name="Wait For Elements State" library="Browser">
+<arg>${DIV_BOX_RESTAURANT}</arg>
+<arg>visible</arg>
+<arg>10</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<msg timestamp="20220428 11:46:25.773" level="INFO">Waited for Element with selector css=div[class="place-info-box"][style="opacity: 1;"] at state visible</msg>
+<status status="PASS" starttime="20220428 11:46:24.554" endtime="20220428 11:46:25.774"/>
+</kw>
+<kw name="Get Element Count" library="Browser">
+<arg>${DIV_BOX_RESTAURANT}</arg>
+<arg>equal</arg>
+<arg>${qtd}</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns the count of elements found with ``selector``.</doc>
+<status status="PASS" starttime="20220428 11:46:25.774" endtime="20220428 11:46:25.779"/>
+</kw>
+<status status="PASS" starttime="20220428 11:46:24.553" endtime="20220428 11:46:25.780"/>
+</kw>
+<kw name="Take Screenshot" library="Browser" type="TEARDOWN">
+<tag>PageContent</tag>
+<doc>Takes a screenshot of the current window or element and saves it to disk.</doc>
+<msg timestamp="20220428 11:46:25.942" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="browser/screenshot/robotframework-browser-screenshot-3.png"&gt;&lt;img src="browser/screenshot/robotframework-browser-screenshot-3.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20220428 11:46:25.781" endtime="20220428 11:46:25.942"/>
+</kw>
+<status status="PASS" starttime="20220428 11:46:18.037" endtime="20220428 11:46:25.942"/>
+</test>
+<status status="PASS" starttime="20220428 11:45:57.332" endtime="20220428 11:46:26.028"/>
+</suite>
+<suite id="s1-s2" name="Carrinho" source="C:\rw5\parodifood\tests\carrinho.robot">
+<test id="s1-s2-t1" name="Deve adicionar um item ao carrinho" line="9">
+<kw name="Start Session" library="base" type="SETUP">
+<kw name="New Browser" library="Browser">
+<arg>chromium</arg>
+<arg>False</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Create a new playwright Browser with specified options.</doc>
+<msg timestamp="20220428 11:46:26.056" level="INFO">{"browser": "chromium", "headless": false, "handleSIGINT": true, "handleSIGTERM": true, "handleSIGHUP": true, "timeout": 30000.0, "devtools": false, "slowMo": 0.0, "tracesDir": "C:\\rw5\\parodifood\\logs\\browser\\traces\\ceeb13dd-1d80-4fa1-8bc5-cb58b312af3d"}</msg>
+<msg timestamp="20220428 11:46:27.573" level="INFO">Successfully created browser with options: {"browser":"chromium","headless":false,"handleSIGINT":true,"handleSIGTERM":true,"handleSIGHUP":true,"timeout":30000,"devtools":false,"slowMo":0,"tracesDir":"C:\\rw5\\parodifood\\logs\\browser\\traces\\ceeb13dd-1d80-4fa1-8bc5-cb58b312af3d"}</msg>
+<status status="PASS" starttime="20220428 11:46:26.055" endtime="20220428 11:46:27.573"/>
+</kw>
+<kw name="New Page" library="Browser">
+<arg>http://parodifood.qaninja.academy/</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Open a new Page.</doc>
+<msg timestamp="20220428 11:46:30.149" level="INFO">Successfully initialized new page object and opened url: http://parodifood.qaninja.academy/</msg>
+<msg timestamp="20220428 11:46:30.150" level="INFO">No context was open. New context was automatically opened when this page is created.</msg>
+<status status="PASS" starttime="20220428 11:46:27.573" endtime="20220428 11:46:30.150"/>
+</kw>
+<kw name="Get Text" library="Browser">
+<arg>css=span</arg>
+<arg>contains</arg>
+<arg>Nunca foi tão engraçado pedir comida</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns text attribute of the element found by ``selector``.</doc>
+<status status="PASS" starttime="20220428 11:46:30.150" endtime="20220428 11:46:30.383"/>
+</kw>
+<status status="PASS" starttime="20220428 11:46:26.055" endtime="20220428 11:46:30.383"/>
+</kw>
+<kw name="Create Dictionary" library="BuiltIn">
+<var>&amp;{restaurant}</var>
+<arg>restaurant=STARBUGS COFFEE</arg>
+<arg>desc=Nada melhor que um café pra te ajudar a resolver um bug.</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<msg timestamp="20220428 11:46:30.385" level="INFO">&amp;{restaurant} = { restaurant=STARBUGS COFFEE | desc=Nada melhor que um café pra te ajudar a resolver um bug. }</msg>
+<status status="PASS" starttime="20220428 11:46:30.384" endtime="20220428 11:46:30.385"/>
+</kw>
+<kw name="Go To restaurants" library="search">
+<kw name="Click" library="Browser">
+<arg>text=Estou com fome!</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" starttime="20220428 11:46:30.386" endtime="20220428 11:46:30.482"/>
+</kw>
+<kw name="Get Text" library="Browser">
+<arg>css=h1 strong</arg>
+<arg>contains</arg>
+<arg>Ta na hora de matar a fome!</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns text attribute of the element found by ``selector``.</doc>
+<status status="PASS" starttime="20220428 11:46:30.482" endtime="20220428 11:46:30.501"/>
+</kw>
+<status status="PASS" starttime="20220428 11:46:30.385" endtime="20220428 11:46:30.501"/>
+</kw>
+<kw name="Choose Restaurant" library="search">
 <arg>${restaurant}</arg>
 <kw name="Click" library="Browser">
-<arg>text=${restaurant["name"]}</arg>
+<arg>text=${super_var["restaurant"]}</arg>
 <arg>force=true</arg>
 <tag>PageContent</tag>
 <tag>Setter</tag>
 <doc>Simulates mouse click on the element found by ``selector``.</doc>
-<status status="PASS" starttime="20220427 11:58:35.404" endtime="20220427 11:58:36.233"/>
+<status status="PASS" starttime="20220428 11:46:30.502" endtime="20220428 11:46:31.368"/>
 </kw>
 <kw name="Wait For Elements State" library="Browser">
 <arg>css=#detail</arg>
@@ -79,83 +422,34 @@
 <tag>PageContent</tag>
 <tag>Wait</tag>
 <doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
-<msg timestamp="20220427 11:58:36.248" level="INFO">Waited for Element with selector css=#detail at state visible</msg>
-<status status="PASS" starttime="20220427 11:58:36.233" endtime="20220427 11:58:36.249"/>
+<msg timestamp="20220428 11:46:31.384" level="INFO">Waited for Element with selector css=#detail at state visible</msg>
+<status status="PASS" starttime="20220428 11:46:31.368" endtime="20220428 11:46:31.385"/>
 </kw>
 <kw name="Get Text" library="Browser">
 <arg>css=#detail</arg>
 <arg>contains</arg>
-<arg>${restaurant["desc"]}</arg>
+<arg>${super_var["desc"]}</arg>
 <tag>Assertion</tag>
 <tag>Getter</tag>
 <tag>PageContent</tag>
 <doc>Returns text attribute of the element found by ``selector``.</doc>
-<status status="PASS" starttime="20220427 11:58:36.249" endtime="20220427 11:58:36.446"/>
+<status status="PASS" starttime="20220428 11:46:31.385" endtime="20220428 11:46:31.503"/>
 </kw>
-<status status="PASS" starttime="20220427 11:58:35.403" endtime="20220427 11:58:36.447"/>
+<status status="PASS" starttime="20220428 11:46:30.501" endtime="20220428 11:46:31.503"/>
 </kw>
-<kw name="Add To Cart">
-<arg>Cappuccino com Chantilly</arg>
-<kw name="Click" library="Browser">
-<arg>xpath=//span[text()="${name}"]/..//a[@class="add-to-cart"]</arg>
-<tag>PageContent</tag>
-<tag>Setter</tag>
-<doc>Simulates mouse click on the element found by ``selector``.</doc>
-<status status="PASS" starttime="20220427 11:58:36.450" endtime="20220427 11:58:36.915"/>
-</kw>
-<status status="PASS" starttime="20220427 11:58:36.449" endtime="20220427 11:58:36.915"/>
-</kw>
-<kw name="Should Add To Cart">
-<arg>Cappuccino com Chantilly</arg>
-<kw name="Wait For Elements State" library="Browser">
-<arg>css=#cart tr &gt;&gt; text=${name}</arg>
-<arg>visible</arg>
-<arg>5</arg>
-<tag>PageContent</tag>
-<tag>Wait</tag>
-<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
-<msg timestamp="20220427 11:58:36.932" level="INFO">Waited for Element with selector css=#cart tr &gt;&gt; text=Cappuccino com Chantilly at state visible</msg>
-<status status="PASS" starttime="20220427 11:58:36.916" endtime="20220427 11:58:36.932"/>
-</kw>
-<status status="PASS" starttime="20220427 11:58:36.915" endtime="20220427 11:58:36.932"/>
-</kw>
-<kw name="Add To Cart">
-<arg>Super Espreso</arg>
-<kw name="Click" library="Browser">
-<arg>xpath=//span[text()="${name}"]/..//a[@class="add-to-cart"]</arg>
-<tag>PageContent</tag>
-<tag>Setter</tag>
-<doc>Simulates mouse click on the element found by ``selector``.</doc>
-<status status="PASS" starttime="20220427 11:58:36.933" endtime="20220427 11:58:37.001"/>
-</kw>
-<status status="PASS" starttime="20220427 11:58:36.933" endtime="20220427 11:58:37.001"/>
-</kw>
-<kw name="Should Add To Cart">
-<arg>Super Espreso</arg>
-<kw name="Wait For Elements State" library="Browser">
-<arg>css=#cart tr &gt;&gt; text=${name}</arg>
-<arg>visible</arg>
-<arg>5</arg>
-<tag>PageContent</tag>
-<tag>Wait</tag>
-<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
-<msg timestamp="20220427 11:58:37.016" level="INFO">Waited for Element with selector css=#cart tr &gt;&gt; text=Super Espreso at state visible</msg>
-<status status="PASS" starttime="20220427 11:58:37.002" endtime="20220427 11:58:37.016"/>
-</kw>
-<status status="PASS" starttime="20220427 11:58:37.002" endtime="20220427 11:58:37.016"/>
-</kw>
-<kw name="Add To Cart">
+<kw name="Add To Cart" library="cart">
 <arg>Starbugs 500 error</arg>
 <kw name="Click" library="Browser">
 <arg>xpath=//span[text()="${name}"]/..//a[@class="add-to-cart"]</arg>
+<arg>force=true</arg>
 <tag>PageContent</tag>
 <tag>Setter</tag>
 <doc>Simulates mouse click on the element found by ``selector``.</doc>
-<status status="PASS" starttime="20220427 11:58:37.017" endtime="20220427 11:58:37.083"/>
+<status status="PASS" starttime="20220428 11:46:31.506" endtime="20220428 11:46:31.729"/>
 </kw>
-<status status="PASS" starttime="20220427 11:58:37.017" endtime="20220427 11:58:37.084"/>
+<status status="PASS" starttime="20220428 11:46:31.506" endtime="20220428 11:46:31.730"/>
 </kw>
-<kw name="Should Add To Cart">
+<kw name="Should Add To Cart" library="cart">
 <arg>Starbugs 500 error</arg>
 <kw name="Wait For Elements State" library="Browser">
 <arg>css=#cart tr &gt;&gt; text=${name}</arg>
@@ -164,13 +458,19 @@
 <tag>PageContent</tag>
 <tag>Wait</tag>
 <doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
-<msg timestamp="20220427 11:58:37.099" level="INFO">Waited for Element with selector css=#cart tr &gt;&gt; text=Starbugs 500 error at state visible</msg>
-<status status="PASS" starttime="20220427 11:58:37.085" endtime="20220427 11:58:37.099"/>
+<msg timestamp="20220428 11:46:31.744" level="INFO">Waited for Element with selector css=#cart tr &gt;&gt; text=Starbugs 500 error at state visible</msg>
+<status status="PASS" starttime="20220428 11:46:31.731" endtime="20220428 11:46:31.745"/>
 </kw>
-<status status="PASS" starttime="20220427 11:58:37.084" endtime="20220427 11:58:37.100"/>
+<status status="PASS" starttime="20220428 11:46:31.730" endtime="20220428 11:46:31.745"/>
 </kw>
-<kw name="Total Cart Should Be">
-<arg>38,00</arg>
+<kw name="Total Cart Should Be" library="cart">
+<arg>15,60</arg>
+<kw name="Log" library="BuiltIn">
+<arg>${total}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220428 11:46:31.746" level="INFO">15,60</msg>
+<status status="PASS" starttime="20220428 11:46:31.746" endtime="20220428 11:46:31.746"/>
+</kw>
 <kw name="Get Text" library="Browser">
 <arg>xpath=//th[contains(text(),"Total")]/..//td</arg>
 <arg>contains</arg>
@@ -179,36 +479,276 @@
 <tag>Getter</tag>
 <tag>PageContent</tag>
 <doc>Returns text attribute of the element found by ``selector``.</doc>
-<status status="PASS" starttime="20220427 11:58:37.101" endtime="20220427 11:58:37.124"/>
+<status status="PASS" starttime="20220428 11:46:31.746" endtime="20220428 11:46:31.786"/>
 </kw>
-<status status="PASS" starttime="20220427 11:58:37.100" endtime="20220427 11:58:37.124"/>
-</kw>
-<kw name="Sleep" library="BuiltIn">
-<arg>30</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20220427 11:59:07.129" level="INFO">Slept 30 seconds</msg>
-<status status="PASS" starttime="20220427 11:58:37.124" endtime="20220427 11:59:07.129"/>
+<status status="PASS" starttime="20220428 11:46:31.745" endtime="20220428 11:46:31.786"/>
 </kw>
 <kw name="Take Screenshot" library="Browser" type="TEARDOWN">
 <tag>PageContent</tag>
 <doc>Takes a screenshot of the current window or element and saves it to disk.</doc>
-<msg timestamp="20220427 11:59:10.699" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="browser/screenshot/robotframework-browser-screenshot-1.png"&gt;&lt;img src="browser/screenshot/robotframework-browser-screenshot-1.png" width="800px"&gt;&lt;/a&gt;</msg>
-<status status="PASS" starttime="20220427 11:59:07.131" endtime="20220427 11:59:10.699"/>
+<msg timestamp="20220428 11:46:31.953" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="browser/screenshot/robotframework-browser-screenshot-4.png"&gt;&lt;img src="browser/screenshot/robotframework-browser-screenshot-4.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20220428 11:46:31.787" endtime="20220428 11:46:31.953"/>
+</kw>
+<status status="PASS" starttime="20220428 11:46:26.051" endtime="20220428 11:46:31.957"/>
+</test>
+<test id="s1-s2-t2" name="Deve adicionar 3 itens ao carrinho" line="21">
+<kw name="Start Session" library="base" type="SETUP">
+<kw name="New Browser" library="Browser">
+<arg>chromium</arg>
+<arg>False</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Create a new playwright Browser with specified options.</doc>
+<msg timestamp="20220428 11:46:32.052" level="INFO">{"browser": "chromium", "headless": false, "handleSIGINT": true, "handleSIGTERM": true, "handleSIGHUP": true, "timeout": 30000.0, "devtools": false, "slowMo": 0.0, "tracesDir": "C:\\rw5\\parodifood\\logs\\browser\\traces\\1de72c6a-f670-4597-9606-c2b16af299fb"}</msg>
+<msg timestamp="20220428 11:46:33.570" level="INFO">Successfully created browser with options: {"browser":"chromium","headless":false,"handleSIGINT":true,"handleSIGTERM":true,"handleSIGHUP":true,"timeout":30000,"devtools":false,"slowMo":0,"tracesDir":"C:\\rw5\\parodifood\\logs\\browser\\traces\\1de72c6a-f670-4597-9606-c2b16af299fb"}</msg>
+<status status="PASS" starttime="20220428 11:46:32.051" endtime="20220428 11:46:33.570"/>
+</kw>
+<kw name="New Page" library="Browser">
+<arg>http://parodifood.qaninja.academy/</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Open a new Page.</doc>
+<msg timestamp="20220428 11:46:40.101" level="INFO">Successfully initialized new page object and opened url: http://parodifood.qaninja.academy/</msg>
+<msg timestamp="20220428 11:46:40.102" level="INFO">No context was open. New context was automatically opened when this page is created.</msg>
+<status status="PASS" starttime="20220428 11:46:33.570" endtime="20220428 11:46:40.102"/>
+</kw>
+<kw name="Get Text" library="Browser">
+<arg>css=span</arg>
+<arg>contains</arg>
+<arg>Nunca foi tão engraçado pedir comida</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns text attribute of the element found by ``selector``.</doc>
+<status status="PASS" starttime="20220428 11:46:40.102" endtime="20220428 11:46:40.328"/>
+</kw>
+<status status="PASS" starttime="20220428 11:46:32.050" endtime="20220428 11:46:40.329"/>
+</kw>
+<kw name="get JSON" library="base">
+<var>${cart_json}</var>
+<arg>cart.json</arg>
+<kw name="Get File" library="OperatingSystem">
+<var>${file}</var>
+<arg>${EXECDIR}/resources/fixtures/${file_name}</arg>
+<doc>Returns the contents of a specified file.</doc>
+<msg timestamp="20220428 11:46:40.331" level="INFO" html="true">Getting file '&lt;a href="file://C:\rw5\parodifood\resources\fixtures\cart.json"&gt;C:\rw5\parodifood\resources\fixtures\cart.json&lt;/a&gt;'.</msg>
+<msg timestamp="20220428 11:46:40.332" level="INFO">${file} = {
+  "restaurant": "STARBUGS COFFEE",
+  "desc": "Nada melhor que um café pra te ajudar a resolver um bug.",
+  "products": [
+    { "name": "Cappuccino com Chantilly" },
+    { "name": "Super Espreso" },
+...</msg>
+<status status="PASS" starttime="20220428 11:46:40.331" endtime="20220428 11:46:40.332"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${super_var}</var>
+<arg>json.loads($file)</arg>
+<arg>json</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20220428 11:46:40.337" level="INFO">${super_var} = {'restaurant': 'STARBUGS COFFEE', 'desc': 'Nada melhor que um café pra te ajudar a resolver um bug.', 'products': [{'name': 'Cappuccino com Chantilly'}, {'name': 'Super Espreso'}, {'name': 'Starbugs 5...</msg>
+<status status="PASS" starttime="20220428 11:46:40.332" endtime="20220428 11:46:40.337"/>
+</kw>
+<msg timestamp="20220428 11:46:40.337" level="INFO">${cart_json} = {'restaurant': 'STARBUGS COFFEE', 'desc': 'Nada melhor que um café pra te ajudar a resolver um bug.', 'products': [{'name': 'Cappuccino com Chantilly'}, {'name': 'Super Espreso'}, {'name': 'Starbugs 5...</msg>
+<status status="PASS" starttime="20220428 11:46:40.330" endtime="20220428 11:46:40.337"/>
+</kw>
+<kw name="Go To restaurants" library="search">
+<kw name="Click" library="Browser">
+<arg>text=Estou com fome!</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" starttime="20220428 11:46:40.338" endtime="20220428 11:46:40.452"/>
+</kw>
+<kw name="Get Text" library="Browser">
+<arg>css=h1 strong</arg>
+<arg>contains</arg>
+<arg>Ta na hora de matar a fome!</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns text attribute of the element found by ``selector``.</doc>
+<status status="PASS" starttime="20220428 11:46:40.452" endtime="20220428 11:46:40.471"/>
+</kw>
+<status status="PASS" starttime="20220428 11:46:40.338" endtime="20220428 11:46:40.471"/>
+</kw>
+<kw name="Choose Restaurant" library="search">
+<arg>${cart_json}</arg>
+<kw name="Click" library="Browser">
+<arg>text=${super_var["restaurant"]}</arg>
+<arg>force=true</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" starttime="20220428 11:46:40.472" endtime="20220428 11:46:41.299"/>
+</kw>
+<kw name="Wait For Elements State" library="Browser">
+<arg>css=#detail</arg>
+<arg>visible</arg>
+<arg>10</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<msg timestamp="20220428 11:46:41.311" level="INFO">Waited for Element with selector css=#detail at state visible</msg>
+<status status="PASS" starttime="20220428 11:46:41.300" endtime="20220428 11:46:41.312"/>
+</kw>
+<kw name="Get Text" library="Browser">
+<arg>css=#detail</arg>
+<arg>contains</arg>
+<arg>${super_var["desc"]}</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns text attribute of the element found by ``selector``.</doc>
+<status status="PASS" starttime="20220428 11:46:41.312" endtime="20220428 11:46:41.457"/>
+</kw>
+<status status="PASS" starttime="20220428 11:46:40.472" endtime="20220428 11:46:41.457"/>
+</kw>
+<for flavor="IN">
+<var>${product}</var>
+<value>@{cart_json["products"]}</value>
+<iter>
+<var name="${product}">{'name': 'Cappuccino com Chantilly'}</var>
+<kw name="Add To Cart" library="cart">
+<arg>${product["name"]}</arg>
+<kw name="Click" library="Browser">
+<arg>xpath=//span[text()="${name}"]/..//a[@class="add-to-cart"]</arg>
+<arg>force=true</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" starttime="20220428 11:46:41.463" endtime="20220428 11:46:41.661"/>
+</kw>
+<status status="PASS" starttime="20220428 11:46:41.461" endtime="20220428 11:46:41.662"/>
+</kw>
+<kw name="Should Add To Cart" library="cart">
+<arg>${product["name"]}</arg>
+<kw name="Wait For Elements State" library="Browser">
+<arg>css=#cart tr &gt;&gt; text=${name}</arg>
+<arg>visible</arg>
+<arg>5</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<msg timestamp="20220428 11:46:41.676" level="INFO">Waited for Element with selector css=#cart tr &gt;&gt; text=Cappuccino com Chantilly at state visible</msg>
+<status status="PASS" starttime="20220428 11:46:41.663" endtime="20220428 11:46:41.676"/>
+</kw>
+<status status="PASS" starttime="20220428 11:46:41.662" endtime="20220428 11:46:41.676"/>
+</kw>
+<status status="PASS" starttime="20220428 11:46:41.460" endtime="20220428 11:46:41.676"/>
+</iter>
+<iter>
+<var name="${product}">{'name': 'Super Espreso'}</var>
+<kw name="Add To Cart" library="cart">
+<arg>${product["name"]}</arg>
+<kw name="Click" library="Browser">
+<arg>xpath=//span[text()="${name}"]/..//a[@class="add-to-cart"]</arg>
+<arg>force=true</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" starttime="20220428 11:46:41.678" endtime="20220428 11:46:41.710"/>
+</kw>
+<status status="PASS" starttime="20220428 11:46:41.677" endtime="20220428 11:46:41.711"/>
+</kw>
+<kw name="Should Add To Cart" library="cart">
+<arg>${product["name"]}</arg>
+<kw name="Wait For Elements State" library="Browser">
+<arg>css=#cart tr &gt;&gt; text=${name}</arg>
+<arg>visible</arg>
+<arg>5</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<msg timestamp="20220428 11:46:41.725" level="INFO">Waited for Element with selector css=#cart tr &gt;&gt; text=Super Espreso at state visible</msg>
+<status status="PASS" starttime="20220428 11:46:41.712" endtime="20220428 11:46:41.725"/>
+</kw>
+<status status="PASS" starttime="20220428 11:46:41.711" endtime="20220428 11:46:41.725"/>
+</kw>
+<status status="PASS" starttime="20220428 11:46:41.676" endtime="20220428 11:46:41.725"/>
+</iter>
+<iter>
+<var name="${product}">{'name': 'Starbugs 500 error'}</var>
+<kw name="Add To Cart" library="cart">
+<arg>${product["name"]}</arg>
+<kw name="Click" library="Browser">
+<arg>xpath=//span[text()="${name}"]/..//a[@class="add-to-cart"]</arg>
+<arg>force=true</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" starttime="20220428 11:46:41.727" endtime="20220428 11:46:41.757"/>
+</kw>
+<status status="PASS" starttime="20220428 11:46:41.726" endtime="20220428 11:46:41.757"/>
+</kw>
+<kw name="Should Add To Cart" library="cart">
+<arg>${product["name"]}</arg>
+<kw name="Wait For Elements State" library="Browser">
+<arg>css=#cart tr &gt;&gt; text=${name}</arg>
+<arg>visible</arg>
+<arg>5</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<msg timestamp="20220428 11:46:41.775" level="INFO">Waited for Element with selector css=#cart tr &gt;&gt; text=Starbugs 500 error at state visible</msg>
+<status status="PASS" starttime="20220428 11:46:41.758" endtime="20220428 11:46:41.775"/>
+</kw>
+<status status="PASS" starttime="20220428 11:46:41.757" endtime="20220428 11:46:41.775"/>
+</kw>
+<status status="PASS" starttime="20220428 11:46:41.726" endtime="20220428 11:46:41.775"/>
+</iter>
+<status status="PASS" starttime="20220428 11:46:41.458" endtime="20220428 11:46:41.775"/>
+</for>
+<kw name="Total Cart Should Be" library="cart">
+<arg>${cart_json["total"]}</arg>
+<kw name="Log" library="BuiltIn">
+<arg>${total}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220428 11:46:41.777" level="INFO">38,00</msg>
+<status status="PASS" starttime="20220428 11:46:41.777" endtime="20220428 11:46:41.777"/>
+</kw>
+<kw name="Get Text" library="Browser">
+<arg>xpath=//th[contains(text(),"Total")]/..//td</arg>
+<arg>contains</arg>
+<arg>${total}</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns text attribute of the element found by ``selector``.</doc>
+<status status="PASS" starttime="20220428 11:46:41.777" endtime="20220428 11:46:41.808"/>
+</kw>
+<status status="PASS" starttime="20220428 11:46:41.776" endtime="20220428 11:46:41.809"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>10</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220428 11:46:51.814" level="INFO">Slept 10 seconds</msg>
+<status status="PASS" starttime="20220428 11:46:41.809" endtime="20220428 11:46:51.814"/>
+</kw>
+<kw name="Take Screenshot" library="Browser" type="TEARDOWN">
+<tag>PageContent</tag>
+<doc>Takes a screenshot of the current window or element and saves it to disk.</doc>
+<msg timestamp="20220428 11:46:51.997" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="browser/screenshot/robotframework-browser-screenshot-5.png"&gt;&lt;img src="browser/screenshot/robotframework-browser-screenshot-5.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20220428 11:46:51.815" endtime="20220428 11:46:51.997"/>
 </kw>
 <tag>temp</tag>
-<status status="PASS" starttime="20220427 11:58:27.769" endtime="20220427 11:59:10.700"/>
+<status status="PASS" starttime="20220428 11:46:32.047" endtime="20220428 11:46:51.998"/>
 </test>
-<status status="PASS" starttime="20220427 11:58:26.349" endtime="20220427 11:59:10.778"/>
+<status status="PASS" starttime="20220428 11:46:26.036" endtime="20220428 11:46:52.082"/>
+</suite>
+<status status="PASS" starttime="20220428 11:45:57.295" endtime="20220428 11:46:52.088"/>
 </suite>
 <statistics>
 <total>
-<stat pass="1" fail="0" skip="0">All Tests</stat>
+<stat pass="5" fail="0" skip="0">All Tests</stat>
 </total>
 <tag>
 <stat pass="1" fail="0" skip="0">temp</stat>
 </tag>
 <suite>
-<stat pass="1" fail="0" skip="0" id="s1" name="Carrinho">Carrinho</stat>
+<stat pass="5" fail="0" skip="0" id="s1" name="Tests">Tests</stat>
+<stat pass="3" fail="0" skip="0" id="s1-s1" name="Busca">Tests.Busca</stat>
+<stat pass="2" fail="0" skip="0" id="s1-s2" name="Carrinho">Tests.Carrinho</stat>
 </suite>
 </statistics>
 <errors>
