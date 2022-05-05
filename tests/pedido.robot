@@ -6,7 +6,7 @@ Test Setup        Start Session
 Test Teardown     Take Screenshot
 
 * Test Cases *
-Deve realizar um novo pedido
+Deve realizar um novo pedido em Dinheiro
 
   ${order_json}       get JSON      order.json
 
@@ -19,20 +19,7 @@ Deve realizar um novo pedido
   END
 
   Go Checkout
-
-* Keywords *
-Go Checkout
-
-  Click       text=Fechar pedido
-
-  ${element}        Set Variable        css=.page.header
-
-  Wait For Elements State       ${element}        visible       10
-  Get Text                      ${element}        contains      Finalize o seu pedido
-
-Fill Data Costumer
-  [Arguments]       ${costumer}
-
-  Fill Text       css=input[placeholder="Nome"]             ${customer["name"]}
-  Fill Text       css=input[placeholder="E-mail"]           ${costumer["email"]}
-  Fill Text       css=input[placeholder^="Confirmação"]     ${costumer["email"]}
+  Fill Data Costumer                ${order_json["customer"]}
+  Select Payment Option             ${order_json["payment"]}
+  Pay Order
+  Order Should Be Completed
