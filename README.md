@@ -5,3 +5,7 @@ Projeto desenvolvido na 5ª edição da Robo Week pela QA Ninja onde fazemos a a
 
 - App Actions
 - Variáveis em Robot
+
+### Observação
+
+Execução dos testes mediante disponibilidade do site da ***Parodifood*** utilizado no bootcamp
