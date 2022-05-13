@@ -4,7 +4,7 @@ Projeto desenvolvido na 5ª edição da Robo Week pela QA Ninja onde fazemos a a
 ### Conceitos Abordados
 
 - App Actions
-- Variáveis em Robot
+- Variáveis e Supervariáveis em Robot
 
 ### Observação
 
